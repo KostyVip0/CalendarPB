@@ -1,0 +1,241 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+/*Корневой узел */
+#PrimaryAnchorPane {
+	-fx-background-color:  #091D29;
+	-fx-background-radius: 10;
+	-fx-border-color:  #000000;
+	-fx-border-radius: 10;
+	-fx-border-width: 0.5px;
+}
+
+/*Шапка */
+#TopAnchorNode {
+	-fx-background-color:  #091D29;
+	-fx-background-radius: 10;
+}
+
+#DatesAndTasks {
+	-fx-background-color:  #4C5458;
+}
+
+/*FF6400*/
+#timeLabel {
+	-fx-text-fill: #FF8B40;
+}
+
+#brandName {
+	-fx-text-fill: #FF8B40;
+}
+
+#nameProg {
+	-fx-text-fill: #FF8B40;
+}
+
+#accountName {
+	-fx-text-fill: #FF8B40;
+}
+
+/*Кнопка выхода */
+#exitBtn {
+	-fx-background-image: url("/ExitB.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: #091D29;	
+	-fx-background-radius: 0.0 10 0.0 0.0;
+	-fx-background-position: center ;	
+	-fx-padding: 0; 
+}
+
+/*Кнопка выхода при на ведении курсора */
+#exitBtn:hover {
+	-fx-background-color: #BF4444;
+	-fx-background-image: url("/ExitW.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-radius: 0.0 9 0.0 0.0;
+	-fx-padding: 0;
+	-fx-translate-x: 1px;
+	-fx-translate-y: -1px;
+	
+}
+
+/*Кнопка выхода при срабатывании флага изменения размера окна. */
+#exitBtn:resizing {
+	-fx-background-image: url("/ExitB.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-color: #091D29;	
+	-fx-background-radius: 0.0 10 0.0 0.0;
+	-fx-background-position: center ;
+	-fx-padding: 0;
+	-fx-translate-x: 1px;
+	-fx-translate-y: -1px;
+}
+
+/*Кнопка полноэкранного режима */
+#fullScrBtn {
+	-fx-background-color: #091D29;
+	-fx-background-image: url("/FullScreenB.png");
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+/*Кнопка полноэкранного режима при наведении курсора */
+#fullScrBtn:hover {
+	-fx-background-color: #1B2F3A;
+	-fx-background-image: url("/FullScreenBHover.png")
+}
+
+/*Кнопка полноэкранного режима при развернутом приложении */
+#fullScrBtn:yesFullScr {
+	-fx-background-image: url("/FullScreenYesB.png")
+}
+
+#fullScrBtn:yesFullScrHover {
+	-fx-background-image: url("/FullScreenYesBHover.png");
+	-fx-background-color: #1B2F3A;
+}
+
+/*Кнопка минимизации приложения */
+#minWinBtn {
+	-fx-background-image: url("/MinimizeB.png");
+	-fx-background-color: #091D29;	 
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+
+/*Кнопка минимизации приложения при наведении курсора */
+#minWinBtn:hover {
+	-fx-background-image: url("/MinimizeBHover.png");
+	-fx-background-color: #1B2F3A;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;	 
+}
+
+
+#addButton {
+	-fx-background-color:  #091D29;
+	-fx-text-fill: #FF8B40;
+}
+
+#addButton:hover {
+	-fx-background-color: #1B2F3A;
+}
+
+#sepTop {
+	-fx-background-color: #938C83
+}
+
+/* Изменение цвета границы ScrollPane при выделении */
+#aScrollPane:focused {
+	-fx-focus-color:  #959798;
+}
+
+/*ImportantEventsVBox */
+
+#ImportantEventsVBox {
+	-fx-background-color:  #4C5458;
+	-fx-background-radius: 10;
+}
+
+/* DateTop.fxml */
+
+
+#dateTop {
+	-fx-text-fill: #FF8B40;
+}
+
+
+
+#topNodeDateTop:ifDateSelection {	
+	-fx-background-color:  #1B2F3A;
+	-fx-background-radius: 10 10 0.0 0.0;
+}
+
+/* AddEvent.fxml */
+
+#addEventNode {
+	-fx-background-color: #091D29;
+	-fx-background-radius: 10;
+}
+
+#addEventNode .label {
+	-fx-text-fill: #FF8B40;
+}
+/*Скрываем стрелки*/
+#addEventNode .spinner .increment-arrow-button,
+                       .decrement-arrow-button {
+	visibility: hidden;
+}
+
+/* EditingEvent.fxml */
+
+#editingEventNode {
+	-fx-background-color: #091D29;
+	-fx-background-radius: 10;
+}
+
+#editingEventNode .label {
+	-fx-text-fill: #FF8B40;
+}
+/*Скрываем стрелки*/
+#editingEventNode .spinner .increment-arrow-button,
+                       .decrement-arrow-button {
+	visibility: hidden;
+}
+
+
+/*VBox DatesAndTasks */
+
+#DatesAndTasks {
+	-fx-background-color:  #091D29;
+}
+
+/*VBox vBoxLow */
+
+#vBoxLow {
+	-fx-background-color:  #4C5458;
+	-fx-background-radius: 10;
+	-fx-padding:0.0 0.0 10 0.0;
+	-fx-spacing: 10;
+}
+
+#vBoxLow:hover {
+	-fx-background-color:  #1B2F3A;
+}
+
+
+#vBoxLow:ifDateSelection {	
+	-fx-background-color:  #1B2F3A;
+}
+
+/*aScrollPane*/
+
+#aScrollPane {
+	-fx-background-color:  #091D29;
+}
+
+#aScrollPane .scroll-bar:vertical {
+	-fx-background-color:  #091D29;
+	-fx-border-color:  #091D29;
+}
+
+#aScrollPane .scroll-bar:horizontal {
+	-fx-background-color:  #091D29;
+	-fx-border-color:  #091D29;
+}
+
+#aScrollPane .scroll-bar .thumb {
+	-fx-background-color:  #FF8B40;	
+}
+
+#aScrollPane .scroll-bar:vertical .increment-button,
+             .scroll-bar:vertical .decrement-button {
+	-fx-base:  #FF8B40;	
+}
+
+#aScrollPane .scroll-bar:horizontal .increment-button,
+             .scroll-bar:horizontal .decrement-button {
+	-fx-base:  #FF8B40;	
+}
+
+
+
