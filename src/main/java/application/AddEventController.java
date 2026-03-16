@@ -2,7 +2,6 @@ package application;
 
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 
@@ -112,10 +111,10 @@ public class AddEventController {
     	
     	
     	calendarController.getStackPane().getChildren().remove(addEventNode);
-    	calendarController.getAScrollPane().setEffect(null);
-    	
+    	calendarController.getAScrollPane().setEffect(null);    	
 
-    }
+    }    
+    
 
     @FXML
     private Button btnRecordCancel;

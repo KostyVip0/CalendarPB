@@ -53,6 +53,7 @@
             </Button>
             <Button fx:id="addButton" layoutX="230.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#addButtonClicked" text="Добавить" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="75.0" />
             <Label fx:id="errLabel" layoutX="527.0" layoutY="79.0" prefHeight="17.0" prefWidth="443.0" textFill="#cd1616" />
+            <Button fx:id="saveButton" layoutX="-8.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#saveButton" text="Сохранить" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="75.0" />
          </children>
          <opaqueInsets>
             <Insets bottom="10.0" />

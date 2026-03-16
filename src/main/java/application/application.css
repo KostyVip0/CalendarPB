@@ -110,7 +110,7 @@
 	-fx-background-position: center;	 
 }
 
-
+/*Кнопка добавления задачи */
 #addButton {
 	-fx-background-color:  #091D29;
 	-fx-text-fill: #FF8B40;
@@ -119,6 +119,17 @@
 #addButton:hover {
 	-fx-background-color: #1B2F3A;
 }
+
+/*Кнопка сохранения */
+#saveButton {
+	-fx-background-color:  #091D29;
+	-fx-text-fill: #FF8B40;
+}
+
+#saveButton:hover {
+	-fx-background-color: #1B2F3A;
+}
+
 
 #sepTop {
 	-fx-background-color: #938C83

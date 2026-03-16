@@ -1,5 +1,8 @@
 package application;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -7,34 +10,42 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.fxml.FXMLLoader;
+import org.springframework.context.ConfigurableApplicationContext;
 
-public class Main extends Application {	
-	
+import java.io.IOException;
+
+@SpringBootApplication
+public class Main extends Application {
+
+	private ConfigurableApplicationContext springContext;
+
 	@Override
-	public void start(Stage primaryStage) {
-		try {
-			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Calendar.fxml"));
-			Scene scene = new Scene(root, 2200, 1200, Color.TRANSPARENT);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.initStyle(StageStyle.UNDECORATED);
-			primaryStage.initStyle(StageStyle.TRANSPARENT);
-			
-			//primaryStage.addEventHandler(WindowEvent.WINDOW_SHOWING, event -> {
-			//	
-			//});
-			
-			primaryStage.show();
+	public void start(Stage primaryStage) throws IOException {
 
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}	
-	
+		springContext = new SpringApplicationBuilder(Main.class).headless(false).run();
 
-	public static void main(String[] args) {
-		launch(args);
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Calendar.fxml"));
+		loader.setControllerFactory(springContext::getBean);
+
+
+		AnchorPane root = (AnchorPane) loader.load();
+		Scene scene = new Scene(root, 1800, 1050, Color.TRANSPARENT);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		primaryStage.setScene(scene);
+		primaryStage.initStyle(StageStyle.TRANSPARENT);
+
+		primaryStage.show();
+
+	}
+
+	@Override
+	public void stop() throws Exception {
+		springContext.close();
+	}
+
+
+
+	public static void main(String[] args)	{
+		launch(Main.class);
 	}	
 }

@@ -3,12 +3,11 @@ package application;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javafx.application.Platform;
 import javafx.css.PseudoClass;
@@ -19,18 +18,19 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.Separator;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import javafx.scene.effect.GaussianBlur;
 
-
+@Component
 public class CalendarController {
+	
+	// DI-механизм (Dependency Injection) фреймворка Spring. Автоматическое внедрение экземпляра сервиса.
+	@Autowired
+	private CalendarService calendarService;
 	
 	private AddEventController addEventController;	
 	private EditingEventController editingEventController;
@@ -89,6 +89,30 @@ public class CalendarController {
     
     @FXML
     private Label accountName;
+    
+    /**
+     * Кнопка сохранения данных в PSQL
+     */
+    @FXML
+    private Button saveButton;
+    
+    /**
+     * Кнопка сохранения данных с БД.
+     * @param event
+     */
+    @FXML
+    void saveButton(MouseEvent event) {
+
+    	for(var entry: DatesAndTasksMap.getDateMap().entrySet()) {
+    		for(var entryArray: entry.getValue()) {
+    			System.out.println(entry.getKey() + " ");
+
+    			// Сервис сохраняет данные в PSQL.
+    			calendarService.saveEvent(new EntityEventTime(entry.getKey(), entryArray.getLocalTime(), entryArray.getStr()));
+
+    		}
+    	}
+    }
 	
 	@FXML
 	private ScrollPane aScrollPane;
@@ -655,6 +679,7 @@ public class CalendarController {
 		}		
 	}
 	
+	@SuppressWarnings("unused")
 	@FXML
 	public void initialize() throws IOException {
 		

@@ -17,8 +17,6 @@ public class ImportantEvents extends Label {
 	
 	Label getImportantEvents() {
 		return lbl;
-	}
-	
-	
+	}	
 }
 
